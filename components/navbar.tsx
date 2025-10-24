@@ -1,10 +1,8 @@
 "use client";
 
-import Image from "next/image";
-import img from "../assets/images/Logo.png";
-
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
+
 
 import {
   Navbar as HeroUINavbar,
@@ -13,6 +11,7 @@ import {
   NavbarBrand,
   NavbarItem,
   NavbarMenuItem,
+  NavbarMenuToggle
 } from "@heroui/navbar";
 import { Link } from "@heroui/link";
 import { link as linkStyles } from "@heroui/theme";
@@ -22,9 +21,10 @@ import clsx from "clsx";
 import { siteConfig } from "@/config/site";
 
 export const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const currentPath = usePathname();
 
-  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,11 +42,13 @@ export const Navbar = () => {
   return (
     <HeroUINavbar
       maxWidth="xl"
+      isMenuOpen={isMenuOpen}
+      onMenuOpenChange={setIsMenuOpen}
       className={clsx(
-        "fixed top-0 left-0 w-full z-50 transition-colors duration-500",
+        "fixed top-0 left-0 w-full z-50 transition-colors duration-500 backdrop-blur-sm ",
         scrolled
-          ? "lg:bg-[#9bd0ff] lg:text-[#ffe0ffaa] sm:bg-[#9bd0ff] sm:text-[#ffe0ffaa] shadow-md"
-          : "bg-white/95 backdrop-blur-sm shadow-sm lg:bg-transparent lg:shadow-none"
+          ? "lg:text-[#ffffff] sm:text-[#ffffff] shadow-md"
+          : "bg-white/95 lg:text-[#0000] sm:text-[#0000] shadow-sm lg:bg-transparent lg:shadow-none"
       )}
     >
       <NavbarContent className="basis-full gap-200" justify="center">
@@ -62,11 +64,19 @@ export const Navbar = () => {
                 transform="translate(100 100)"
               />
             </svg>
-            <p className="font-bold text-2xl text-foreground">
+            <p className="font-bold text-2xl text-[#a1a1a1]">
               Ndae <i className="text-primary">Dev</i>
             </p>
           </NextLink>
         </NavbarBrand>
+
+        <div className="lg:hidden">
+          <NavbarMenuToggle aria-label="Toggle menu" />
+        </div>
+
+        <div className="lg:hidden">
+          <NavbarMenuToggle aria-label="Toggle menu" />
+        </div>
 
         <ul className="hidden lg:flex gap-8 justify-end">
           {siteConfig.navItems.map((item) => {
@@ -124,6 +134,28 @@ export const Navbar = () => {
           ))}
         </div>
       </NavbarMenu>
+      <NavbarMenu>
+        <div className="mx-4 mt-2 flex flex-col gap-2">
+          {siteConfig.navMenuItems.map((item, index) => (
+            <NavbarMenuItem key={`${item}-${index}`}>
+              <Link
+                color={
+                  // Logika pewarnaan item menu mobile (misalnya item pertama diwarnai primer)
+                  index === 0
+                    ? "primary"
+                    : "foreground"
+                }
+                href={item.href} // Pastikan menggunakan href yang benar
+                size="lg"
+                as={NextLink} // Menggunakan NextLink untuk navigasi yang cepat
+                onClick={() => setIsMenuOpen(false)} // Tutup menu setelah klik
+              >
+                {item.label}
+              </Link>
+            </NavbarMenuItem>
+          ))}
+        </div>
+      </NavbarMenu>
     </HeroUINavbar>
   );
 };
