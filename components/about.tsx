@@ -1,4 +1,3 @@
-// components/AboutSection.jsx
 "use client";
 
 import ProfileAbout from "../assets/images/ProfileAbout.jpg";
@@ -55,7 +54,7 @@ const skillGridVariants = {
   visible: { opacity: 1, transition: { staggerChildren: 0.08 } },
 };
 
-const SkillIcon = ({ name, icon }) => (
+const SkillIcon = ({ name, icon }: { name: string; icon: string }) => (
   <motion.div 
     variants={itemVariants}
     className="flex flex-col items-center space-y-2 p-3 bg-gray-700/50 rounded-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:bg-gray-700"
@@ -67,10 +66,9 @@ const SkillIcon = ({ name, icon }) => (
 
 export default function AboutSection() {
   return (
-    <section id="about" className="min-h-screen min-w-full bg-gray-950 text-white flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8">
+    <section className="min-h-screen min-w-full bg-gray-950 text-white flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"></link>
       <div className="max-w-7xl w-full mx-auto space-y-18">
-        
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -134,11 +132,9 @@ export default function AboutSection() {
                 ))}
               </div>
             </div>
-
           </motion.div>
 
           <div className="lg:col-span-2 space-y-10">
-            
             <motion.div 
               variants={itemVariants}
               className="bg-gray-800 p-8 rounded-xl shadow-2xl"
@@ -166,35 +162,33 @@ export default function AboutSection() {
               <h2 className="text-3xl font-bold text-white mb-6 border-b border-primary-500 pb-3">
                 Pendidikan & Pencapaian
               </h2>
-              <div className="space-y-9 text-gray-400">
-              </div>
-                <p>
-                  <strong className="text-primary-500">TK IT Kholafiyah An Nur</strong> (2014 - 2015)
-                  <br />
-                  <span className="text-gray-500 text-sm italic"><i className="bi bi-geo-alt-fill"></i> Karangmenggah, Wonorejo Pasuruan.</span>
-                </p>
-                <p>
-                  <br />
-                  <strong className="text-primary-500">SD Negeri 1 Bakalan</strong> (2015 - 2021)
-                  <br />
-                  <span className="text-gray-500 text-sm italic"><i className="bi bi-geo-alt-fill"></i> Bakalan, Purwosari Pasuruan</span>
-                </p>
-                <p>
-                  <br />
-                  <strong className="text-primary-500">SMP Negeri 1 Purwosari</strong> (2021 - 2024)
-                  <br />
-                  <span className="text-gray-500 text-sm italic"><i className="bi bi-geo-alt-fill"></i> Jl Puntir, Purwosari Pasuruan.</span>
-                </p>
-                <p>
-                  <br />
-                  <strong className="text-primary-500">SMK Negeri 1 Purwosari</strong> (2024 - Sekarang)
-                  <br />
-                  <span className="text-gray-500 text-sm italic">Rekayasa Perangkat Lunak (RPL)</span>
-                  <br />
-                  <span className="text-gray-500 text-sm italic"><i className="bi bi-geo-alt-fill"></i> Purwosari, Kabupaten Pasuruan</span>
-                </p>
+              <div className="space-y-9 text-gray-400"></div>
+              <p>
+                <strong className="text-primary-500">TK IT Kholafiyah An Nur</strong> (2014 - 2015)
+                <br />
+                <span className="text-gray-500 text-sm italic"><i className="bi bi-geo-alt-fill"></i> Karangmenggah, Wonorejo Pasuruan.</span>
+              </p>
+              <p>
+                <br />
+                <strong className="text-primary-500">SD Negeri 1 Bakalan</strong> (2015 - 2021)
+                <br />
+                <span className="text-gray-500 text-sm italic"><i className="bi bi-geo-alt-fill"></i> Bakalan, Purwosari Pasuruan</span>
+              </p>
+              <p>
+                <br />
+                <strong className="text-primary-500">SMP Negeri 1 Purwosari</strong> (2021 - 2024)
+                <br />
+                <span className="text-gray-500 text-sm italic"><i className="bi bi-geo-alt-fill"></i> Jl Puntir, Purwosari Pasuruan.</span>
+              </p>
+              <p>
+                <br />
+                <strong className="text-primary-500">SMK Negeri 1 Purwosari</strong> (2024 - Sekarang)
+                <br />
+                <span className="text-gray-500 text-sm italic">Rekayasa Perangkat Lunak (RPL)</span>
+                <br />
+                <span className="text-gray-500 text-sm italic"><i className="bi bi-geo-alt-fill"></i> Purwosari, Kabupaten Pasuruan</span>
+              </p>
             </motion.div>
-            
           </div>
         </motion.div>
       </div>

@@ -1,4 +1,3 @@
-// components/ContactSection.jsx
 "use client";
 
 import Link from 'next/link';
@@ -33,15 +32,13 @@ const itemVariants = {
 };
 
 export default function ContactSection() {
-  
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     alert('Formulir berhasil dikirim (Simulasi)!');
   };
 
   return (
     <section className="min-h-screen bg-gray-950 text-white py-20 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
-      
       <motion.div 
         className="max-w-7xl w-full mx-auto space-y-16"
         variants={containerVariants}
@@ -49,7 +46,6 @@ export default function ContactSection() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
-        
         <div className="text-center">
           <h2 className="text-sm font-semibold uppercase tracking-widest text-primary-500">
             Mari Berkolaborasi
@@ -61,7 +57,6 @@ export default function ContactSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 bg-gray-800 p-8 md:p-12 rounded-xl shadow-2xl">
-          
           <motion.div 
             className="lg:col-span-1 space-y-8"
             variants={itemVariants}
@@ -69,11 +64,9 @@ export default function ContactSection() {
             <h3 className="text-3xl font-bold text-white border-b border-primary-500 pb-3">
               Detail Kontak
             </h3>
-            
             <p className="text-gray-400 leading-relaxed">
               Saya secara aktif mencari peluang kerja dan proyek kolaborasi. Sampaikan detail proyek Anda dan mari kita wujudkan!
             </p>
-
             <div className="space-y-4">
               {socialLinks.map((link, index) => (
                 <motion.div 
@@ -97,9 +90,7 @@ export default function ContactSection() {
             <h3 className="text-3xl font-bold text-white mb-6 border-b border-primary-500 pb-3">
               Kirimkan Pesan
             </h3>
-            
             <form onSubmit={handleSubmit} className="space-y-6">
-              
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">Nama Lengkap</label>
                 <input
@@ -129,7 +120,7 @@ export default function ContactSection() {
                 <textarea
                   id="message"
                   name="message"
-                  rows="4"
+                  rows={4}
                   required
                   className="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg text-white focus:ring-primary-500 focus:border-primary-500 focus:ring-2 outline-none transition duration-200"
                   placeholder="Jelaskan kebutuhan Anda..."
@@ -142,7 +133,6 @@ export default function ContactSection() {
               >
                 Kirim Pesan <Icon icon="mdi:send" className="w-5 h-5 ml-2"/>
               </Button>
-
             </form>
           </motion.div>
         </div>
