@@ -79,7 +79,7 @@ export default function HeroSection() {
               <FaGithub size={24} />
             </Link>
             <Link
-              href="https://wa.me/qr/BXCRHXP7FFY7E1"
+              href="https://wa.me/+62-857-7827-8119"
               className="text-gray-400 hover:text-primary-500 transition-colors duration-300"
             >
               <FaPhone size={24} />

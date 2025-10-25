@@ -9,7 +9,7 @@ const socialLinks = [
   { name: 'Email', icon: 'mdi:email-outline', href: 'mailto:nandareski33@gmail.com' },
   { name: 'GitHub', icon: 'mdi:github', href: 'https://github.com/Nanda4356' },
   { name: 'LinkedIn', icon: 'mdi:linkedin', href: 'https://www.linkedin.com/in/nanda-rezqy-342556393?trk=contact-info' }, 
-  { name: 'WhatsApp', icon: 'mdi:phone', href: 'https://wa.me/qr/BXCRHXP7FFY7E1' },
+  { name: 'WhatsApp', icon: 'mdi:phone', href: 'https://wa.me/+62-857-7827-8119' },
 ];
 
 const containerVariants = {

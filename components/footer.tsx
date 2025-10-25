@@ -15,7 +15,7 @@ const socialLinks = [
   { icon: FaInstagram, href: 'https://www.instagram.com/nyndaoo?igsh=MTZkcXpqNDJzZXRhOA==' },
   { icon: FaGithub, href: 'https://github.com/Nanda4356' },
   { icon: FaLinkedinIn, href: 'https://www.linkedin.com/in/nanda-rezqy-342556393?trk=contact-info' }, 
-  { icon: FaWhatsapp, href: 'https://wa.me/qr/BXCRHXP7FFY7E1' },
+  { icon: FaWhatsapp, href: 'https://wa.me/+62-857-7827-8119' },
 ];
 
 export default function Footer() {
