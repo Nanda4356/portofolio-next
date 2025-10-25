@@ -66,7 +66,7 @@ const SkillIcon = ({ name, icon }: { name: string; icon: string }) => (
 
 export default function AboutSection() {
   return (
-    <section className="min-h-screen min-w-full bg-gray-950 text-white flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8">
+    <section id="about" className="min-h-screen min-w-full bg-gray-950 text-white flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"></link>
       <div className="max-w-7xl w-full mx-auto space-y-18">
         <motion.div 

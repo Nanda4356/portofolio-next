@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { FaInstagram, FaGithub, FaTiktok, FaPhone } from "react-icons/fa";
 import ProfileHero from "../assets/images/ProfileHome.jpg";
 
+
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -30,7 +31,7 @@ const imageVariants = {
 
 export default function HeroSection() {
   return (
-    <section className="min-h-screen bg-white  flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8">
+    <section id="home" className="min-h-screen bg-white  flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl w-full gap-12 lg:gap-24 items-center flex flex-col-reverse lg:flex-row">
         
         <motion.div 
@@ -94,7 +95,8 @@ export default function HeroSection() {
           <motion.div variants={itemVariants} className="pt-6">
             <Button
               as={Link}
-              href="#" // Isi link CV di sini
+              href="/CV-Nanda.pdf"
+              download target="_blank"
               className="bg-primary-500 hover:bg-primary-600 text-white font-medium px-5 py-3 rounded-lg shadow-lg transition-all duration-300"
             >
               Unduh CV
