@@ -95,8 +95,7 @@ export default function HeroSection() {
           <motion.div variants={itemVariants} className="pt-6">
             <Button
               as={Link}
-              href="/CV-Nanda.pdf"
-              download target="_blank"
+              href="https://drive.google.com/file/d/1D8LnNn3va-u40-JGnoFK0bWQEm6KOrTo/view?usp=sharing"
               className="bg-primary-500 hover:bg-primary-600 text-white font-medium px-5 py-3 rounded-lg shadow-lg transition-all duration-300"
             >
               Unduh CV
